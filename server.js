@@ -41,7 +41,7 @@ const app = express();
 app.use(express.static("./build", { index: false }));
 
 app.get("/*", (req, res) => {
-  const reactApp = ReactDOMServer.renderToNodeStream(
+  const reactApp = ReactDOMServer.renderToStaticNodeStream(
     <StaticRouter location={req.url}>
       <App />
     </StaticRouter>
